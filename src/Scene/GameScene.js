@@ -54,6 +54,22 @@ class GameScene extends Phaser.Scene {
 
     //player
     this.load.image("player", "assets/image/_dev/ufo.png");
+
+
+    this.load.image(
+      "bg-pink",
+      "assets/image/game-scene/background/background-pink.png"
+    );
+    this.load.spritesheet(
+      "goose",
+      "assets/image/game-scene/spritesheets/goose.png",
+      {
+        frameWidth: 251, // * width of each frame devided by 7
+        frameHeight: 250,
+      }
+    );
+    this.load.image("logs", "assets/image/game-scene/components/logs.png");
+    this.load.image("platform", "assets/image/game-scene/platforms/ground.png");
   }
 
   create() {
@@ -123,6 +139,8 @@ class GameScene extends Phaser.Scene {
     bg.tilePositionX += 0.03;
     bgLayer1.tilePositionX += 0.07;
     bgLayer2.tilePositionX += 0.1;
+
+    this.scene.start("Event1");
   }
 }
 

@@ -88,6 +88,8 @@ export function create(applyPhysics) {
     .sprite(640, 730, "platform-base")
     .setOrigin(0.5, 1);
 
+  this.platformBase.body.allowGravity = false;
+
   // Player
   this.player = this.physics.add
     .sprite(460, 360, "player")
